@@ -2,10 +2,25 @@
 <main>
     <h1>My todos</h1>
     <button (click)="createTodo()">+ new</button>
+    <table>
+        <caption> ToDo's </caption>
+        <thead>
+            <th>ETA</th>
+            <th>type</th>
+            <th>content</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos;">
+                <td> {{ todo.eta }}</td>
+                <td> {{ todo.type }}</td>
+                <td> {{ todo.content }}</td>
+            </tr>
+        </tbody>
+    </table>
     <ul>
         <li 
             *ngFor="let todo of todos;">
-            {{ todo.content }}
+            {{ todo.type }} -> {{ todo.content }}
         </li>
     </ul>
     <div>
